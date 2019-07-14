@@ -1,8 +1,8 @@
 {
   "name": "postcss-critical-css",
-  "version": "3.0.4",
+  "version": "3.0.5",
   "description": "Generate critical CSS using PostCSS",
-  "main": "index.js",
+  "main": "dist/index.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/zgreen/postcss-critical-css"
@@ -36,11 +36,11 @@
     "tape": "^4.10.2"
   },
   "scripts": {
-    "build": "eslint src/** && npm run flow && babel src --out-dir lib",
+    "build": "eslint src/** && npm run flow && babel src --out-dir dist",
     "example": "./node_modules/.bin/babel-node example/example.js",
     "flow": "flow; test $? -eq 0 -o $? -eq 2",
     "eslint": "eslint test/**/*.js && eslint src/**",
-    "start": "eslint src/** && npm run flow && babel src --out-dir lib --watch",
+    "start": "eslint src/** && npm run flow && babel src --out-dir dist --watch",
     "pretest": "./node_modules/.bin/babel-node test/preTest.js",
     "test": "npm run build && npm run test-default && npm run test-no-preserve && npm run test-output-path && npm run test-output-dest && npm run test-no-args && npm run test-no-minify",
     "test-no-args": "npm run pretest -- --noArgs && tape test --noArgs --test=default",
